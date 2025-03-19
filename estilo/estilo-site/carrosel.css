@@ -1,0 +1,130 @@
+.carrosel{
+    width: 100%;
+    height: 50rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+}
+.carrosel::before{
+    content: "";
+    width: 100%;
+    height: 50rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to left,black,transparent,rgba(0, 0, 0, 0),rgb(0, 0, 0),rgb(0, 0, 0));
+    position: absolute;
+    z-index: 1;
+}
+.carrosel-img{
+    width: 80vw;
+    height: 50rem;
+    object-fit: cover;
+    right: 0;
+    position: absolute;
+    transition: 0.6s;
+}
+.carroselButao{
+    z-index: 1;
+    width: 6rem;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+}
+.setaEs{
+    transform: rotate(180deg);
+}
+.seta{
+    width: 2rem;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.carroselButao:hover .seta{
+        width: 4rem
+}
+.carroselButao:hover ~ .carrosel-img{
+    transform: translateX(1vw);
+    
+}
+.carroselButaoEs:hover ~ .carrosel-img{
+    transform: translateX(-1vw);
+    
+}
+
+.inf{
+    position: absolute;
+    width: 25rem;
+    height: 30rem;
+    left: 8rem;
+    background-color: rgba(255, 0, 0, 0);
+    color: white;
+    z-index: 3;
+    display: grid;
+    align-content: center;
+    align-items: center;
+
+    .tituloBanner{
+        font-size: 3rem;
+        margin: 0;
+    }
+    .bannerInf{
+        display: flex;
+        gap: 1rem;
+
+        .classificacao{
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+    .bannerInf p{
+        margin: 0;
+        color: rgb(234, 235, 235);
+    }
+}
+
+@media (max-width:900px){
+    .carrosel{
+        height: 20rem;
+        justify-content: center;
+        gap: 80%;
+
+        .carrosel-img{
+            height: 15rem;
+        }
+        .carroselButao{
+            width: 3rem;
+            opacity: 0;
+        }
+
+        .inf{
+            left: 4rem;
+            width: 10rem;
+
+            .tituloBanner{
+                font-size: 0.6rem !important;
+            }
+            .bannerInf{
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .bannerInf p{
+                font-size: 0.5rem;
+        
+            }
+            .descricao{
+                font-size: 0.4rem;
+                width: 8rem;
+            }
+            .classificacao{
+                width: 0.5rem;
+                height: 0.5rem;
+            }
+        }
+    }
+    
+
+}

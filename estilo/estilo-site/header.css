@@ -1,0 +1,146 @@
+.cabeca{
+
+    width: 100vw;
+    height: 5rem;
+    background-color: black;
+    justify-content: center;
+    display: grid;
+
+    .cabecaConteiner{
+
+        width: 85vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .opcoesEs{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            .opcao-titulo{
+                color: rgb(255, 255, 255);
+                display: inline-block;
+                font-size: 2.5rem;
+                margin: 0;
+                cursor: default;
+               
+            }
+            
+        }
+
+        .opcoesDi{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+
+    }
+}
+
+
+
+.opcaoButao{
+    background-color: transparent;
+    border: none;
+    color: rgb(190, 189, 189);
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.8rem;
+    padding-top: 0.3rem;
+    position: relative;
+}
+.opcaoButao::before{
+    content: "";
+    width: 0rem;
+    height: 0.1rem;
+    bottom: -0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    transition: 0.3s;
+    background-color: white;
+}
+.opcaoButao:hover::before{
+    width: 3rem;
+    height: 0.1rem;
+    background-color: rgb(255, 255, 255);
+}
+
+.opcaoButao:hover{
+    color: white;
+    
+}
+.opcaoButao3pontos{
+    display: none;
+}
+
+.opcaoButaoFt{
+    border: none;
+    padding: none;
+    background-color: transparent;
+    color: rgb(185, 183, 183);
+
+}
+.headerfoto{
+    width: 1rem;
+    height: 1rem;
+}
+.fotoDePerfil,.icon{
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+}
+.fotoDePerfil::before{
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    z-index: 1;
+    background-color: rgba(143, 140, 140, 0.5);
+    background-image: url(/imgs/editar.png);
+    background-size: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.fotoDePerfil:hover::before{
+    opacity: 1;
+
+}
+
+.setaPerfil{
+    width: 1rem;
+    height: 1rem;
+}
+
+.lupa{
+    width: 2rem;
+
+}
+
+
+@media(max-width: 900px){
+    .cabecaConteiner,.opcaoButao,.opcaoButaoFt{
+        display: none;
+    }
+    .opcaoButao3pontos{
+        display: block;
+        width: 2rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        .butaoimg{
+            padding-top: 0.5rem;
+            width: 1.5rem;
+        }
+    }
+    
+}
